@@ -4,7 +4,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "./globals.css";
-import axios from "axios";
+import { cookies } from "next/headers";
 import React from "react";
 import Navbar from "@/components/commerce/navbar/Navbar";
 
@@ -67,15 +67,16 @@ export default async function LocaleLayout({
   }
 
   const isArabic = locale === "ar";
-
+  const cookieStore = cookies();
+  const theme = cookieStore.get("theme")?.value || "light";
   return (
-    <html lang={locale} dir={isArabic ? "rtl" : "ltr"}>
+    <html lang={locale} className={theme} dir={isArabic ? "rtl" : "ltr"}>
       <head>
         <link rel="alternate" href="https://yourdomain.com/en" hrefLang="en" />
         <link rel="alternate" href="https://yourdomain.com/ar" hrefLang="ar" />
       </head>
       <body
-        className={`antialiased text-black relative overflow-x-hidden ${
+        className={`antialiased text-black bg-book-paper dark:bg-book-dark relative overflow-x-hidden ${
           isArabic ? "rtl" : "ltr"
         }`}
       >

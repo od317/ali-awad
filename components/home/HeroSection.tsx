@@ -35,7 +35,7 @@ export default function HeroSection() {
           <div className="md:w-1/2">
             <div className="relative aspect-[3/4] w-full max-w-md mx-auto shadow-2xl">
               <Image
-                src="/images/hero-book.jpg"
+                src="https://upload.wikimedia.org/wikipedia/commons/0/06/Atomic_habits.jpg"
                 alt="Featured book: The Silent Patient by Alex Michaelides"
                 fill
                 className="object-cover rounded-lg"

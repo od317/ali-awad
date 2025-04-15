@@ -5,6 +5,7 @@ import NavSearch from "./NavSearch";
 import NavUser from "./NavUser";
 import NavCart from "./NavCart";
 import MobileMenu from "./MobileMenu";
+import ThemeSwitcher from "@/components/theme/ThemeSwitcher";
 
 export default function Navbar() {
   return (
@@ -21,6 +22,7 @@ export default function Navbar() {
             <NavSearch />
             <NavUser />
             <NavCart />
+            <ThemeSwitcher/>
           </div>
         </div>
       </div>

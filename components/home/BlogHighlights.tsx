@@ -7,7 +7,8 @@ const blogPosts = [
   {
     title: "10 Must-Read Books for Summer 2023",
     excerpt: "Discover our top picks for beach reads and summer adventures.",
-    image: "/images/blog-summer.jpg",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/0/06/Atomic_habits.jpg",
     href: "/blog/summer-2023",
     date: "June 15, 2023",
     readTime: "5 min",
@@ -16,7 +17,8 @@ const blogPosts = [
     title: "How to Build a Reading Habit That Sticks",
     excerpt:
       "Practical tips from bibliophiles to help you read more books this year.",
-    image: "/images/blog-habit.jpg",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/0/06/Atomic_habits.jpg",
     href: "/blog/reading-habit",
     date: "May 28, 2023",
     readTime: "8 min",

@@ -9,25 +9,33 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Your existing custom colors
         "book-primary": {
-          DEFAULT: "#4F46E5",
-          light: "#6366F1",
-          dark: "#4338CA",
+          DEFAULT: "var(--book-primary)",
+          light: "var(--book-primary-light)",
+          dark: "var(--book-primary-dark)",
         },
         "book-secondary": {
-          DEFAULT: "#10B981",
-          light: "#34D399",
-          dark: "#059669",
+          DEFAULT: "var(--book-secondary)",
+          light: "var(--book-secondary-light)",
+          dark: "var(--book-secondary-dark)",
         },
-        "book-light": "#F9FAFB",
-        "book-dark": "#1F2937",
-        "book-accent": "#F59E0B",
-        "book-paper": "#F3F4F6",
+        "book-light": "var(--book-light)",
+        "book-dark": "var(--book-dark)",
+        "book-accent": "var(--book-accent)",
+        "book-paper": "var(--book-paper)",
+
+        // New CSS variables for text colors
+        primary: "var(--text-primary)",
+        secondary: "var(--text-secondary)",
+        accent: "var(--text-accent)",
+      },
+      backgroundColor: {
+        primary: "var(--bg-primary)",
+        secondary: "var(--bg-secondary)",
       },
     },
   },
-  plugins: [
-    require("tailwindcss-rtl"), // Ensure this is properly installed
-  ],
+  plugins: [require("tailwindcss-rtl")],
   darkMode: "class",
 } satisfies Config;

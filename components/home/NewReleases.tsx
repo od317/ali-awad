@@ -8,7 +8,35 @@ const newReleases = [
     title: "The Midnight Library",
     author: "Matt Haig",
     price: 24.99,
-    coverImage: "/images/midnight-library.jpg",
+    coverImage:
+      "https://upload.wikimedia.org/wikipedia/commons/0/06/Atomic_habits.jpg",
+    rating: 4.5,
+    href: "/books/the-midnight-library",
+  },  {
+    id: "12",
+    title: "The Midnight Library",
+    author: "Matt Haig",
+    price: 24.99,
+    coverImage:
+      "https://upload.wikimedia.org/wikipedia/commons/0/06/Atomic_habits.jpg",
+    rating: 4.5,
+    href: "/books/the-midnight-library",
+  },  {
+    id: "13",
+    title: "The Midnight Library",
+    author: "Matt Haig",
+    price: 24.99,
+    coverImage:
+      "https://upload.wikimedia.org/wikipedia/commons/0/06/Atomic_habits.jpg",
+    rating: 4.5,
+    href: "/books/the-midnight-library",
+  },  {
+    id: "14",
+    title: "The Midnight Library",
+    author: "Matt Haig",
+    price: 24.99,
+    coverImage:
+      "https://upload.wikimedia.org/wikipedia/commons/0/06/Atomic_habits.jpg",
     rating: 4.5,
     href: "/books/the-midnight-library",
   },
