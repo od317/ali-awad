@@ -166,7 +166,7 @@ export default function CartModal({
               >
                 View Full Cart <FiArrowRight className="ml-2" />
               </Link>
-              <button className="w-full flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-book-primary bg-book-paper dark:bg-book-dark hover:bg-gray-50 dark:hover:bg-gray-800 border-secondary">
+              <button className="w-full flex items-center justify-center px-6 py-3 border  rounded-md shadow-sm text-base font-medium text-book-primary bg-book-paper dark:bg-book-dark hover:bg-gray-50 dark:hover:bg-gray-800 border-secondary">
                 Checkout
               </button>
             </div>
