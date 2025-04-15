@@ -1,8 +1,14 @@
-create an .env.local file and put copy this and paste inside it :
-NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api
-
-
-"dependencies": {
+{
+  "name": "app_landing_starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
     "@tanstack/react-query": "^5.69.0",
     "@types/leaflet": "^1.9.17",
     "axios": "^1.8.4",
@@ -22,10 +28,8 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api
     "react-icons": "^5.5.0",
     "react-leaflet": "^5.0.0",
     "tailwindcss-rtl": "^0.9.0"
-  }  
-  
-
- "devDependencies": {
+  },
+  "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -35,15 +39,4 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
-Prerequisites
-    Node.js (version 18.18 or higher)
-    npm (version 7 or higher) or yarn
-
-extra packages:
-
-
-Running The Website Steps:
-after you clone the repo do the following steps in the terminal:
-1- cd Ejaza_frontend
-2- npm install ( if using yarn -> yarn install)
-3- npm run dev
+}

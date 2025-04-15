@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+:root {
+    --color-primary: #A7C7E7;
+    --color-secondary: #211951;
+    --color-background: #F0F3FF;
+    --color-border: #15F5BA;
+    --color-text: #333333;
+    height: 100%;
+}
+
+html,body{
+    height: 100%;
+}
+
+* {
+    transition: all 0.3s ease;
+  }
+
+  button  *{
+    cursor: pointer;
+  }
+
+/* Dark mode */
+.dark {
+    --color-primary: #A64D79;
+    --color-secondary: #6A1E55;
+    --color-background: #1A1A1D;
+    --color-border: #3B1C32;
+    --color-text: #ffffff;
+}
