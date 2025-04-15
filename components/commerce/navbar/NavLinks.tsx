@@ -21,8 +21,8 @@ export default function NavLinks() {
         <Link
           key={link.name}
           href={link.href}
-          className={`text-sm font-medium transition-colors hover:text-book-primary ${
-            pathname === link.href ? "text-book-primary" : "text-book-dark"
+        className={`text-sm font-medium transition-colors text-primary ${
+            pathname === link.href ? "text-primary" : "text-dark"
           }`}
         >
           {link.name}

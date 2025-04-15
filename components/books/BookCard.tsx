@@ -24,16 +24,16 @@ export default function BookCard({ book }: { book: Book }) {
             className="object-cover group-hover:opacity-90 transition-opacity"
           />
         </div>
-        <h3 className="font-medium text-lg mb-1 group-hover:text-book-primary transition-colors">
+        <h3 className="font-medium text-lg mb-1 text-primary transition-colors">
           {book.title}
         </h3>
-        <p className="text-gray-600 mb-2">{book.author}</p>
+        <p className="text-gray-600 mb-2 text-primary">{book.author}</p>
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <FiStar className="text-yellow-500 mr-1" />
-            <span>{book.rating}</span>
+            <span className=" text-primary">{book.rating}</span>
           </div>
-          <span className="font-bold">${book.price.toFixed(2)}</span>
+          <span className="font-bold text-primary">${book.price.toFixed(2)}</span>
         </div>
       </Link>
     </div>

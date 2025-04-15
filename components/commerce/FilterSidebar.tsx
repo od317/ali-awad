@@ -75,7 +75,7 @@ export default function FilterSidebar() {
       {/* Mobile filter button */}
       <button
         type="button"
-        className="md:hidden flex items-center gap-2 mb-4 text-book-primary"
+        className="md:hidden flex items-center gap-2 mb-4 text-]primary"
         onClick={() => setMobileFiltersOpen(true)}
       >
         <span>Filters</span>
@@ -115,7 +115,7 @@ export default function FilterSidebar() {
                           type="checkbox"
                           checked={filters.genres.includes(genre)}
                           onChange={() => handleGenreChange(genre)}
-                          className="rounded text-book-primary focus:ring-book-primary"
+                          className="rounded text-primary focus:ring-book-primary"
                         />
                         <span>{genre}</span>
                       </label>
@@ -154,7 +154,7 @@ export default function FilterSidebar() {
                           name="price"
                           checked={filters.priceRange === range.value}
                           onChange={() => handlePriceChange(range.value)}
-                          className="text-book-primary focus:ring-book-primary"
+                          className="text-primary focus:ring-book-primary"
                         />
                         <span>{range.label}</span>
                       </label>
@@ -190,7 +190,7 @@ export default function FilterSidebar() {
                                 format: prev.format === format ? "" : format,
                               }))
                             }
-                            className="rounded text-book-primary focus:ring-book-primary"
+                            className="rounded text-primary focus:ring-book-primary"
                           />
                           <span>{format}</span>
                         </label>
@@ -227,7 +227,7 @@ export default function FilterSidebar() {
                               rating: prev.rating === rating ? 0 : rating,
                             }))
                           }
-                          className="text-book-primary focus:ring-book-primary"
+                          className="text-primary focus:ring-book-primary"
                         />
                         <span className="flex items-center">
                           {[...Array(5)].map((_, i) => (
@@ -273,7 +273,7 @@ export default function FilterSidebar() {
           <h2 className="font-bold text-lg">Filters</h2>
           <button
             onClick={clearAllFilters}
-            className="text-sm text-book-primary hover:underline"
+            className="text-sm text-primary hover:underline"
           >
             Clear All
           </button>
@@ -300,7 +300,7 @@ export default function FilterSidebar() {
                     type="checkbox"
                     checked={filters.genres.includes(genre)}
                     onChange={() => handleGenreChange(genre)}
-                    className="rounded text-book-primary focus:ring-book-primary"
+                    className="rounded text-primary focus:ring-book-primary"
                   />
                   <span>{genre}</span>
                 </label>
@@ -336,7 +336,7 @@ export default function FilterSidebar() {
                     name="price"
                     checked={filters.priceRange === range.value}
                     onChange={() => handlePriceChange(range.value)}
-                    className="text-book-primary focus:ring-book-primary"
+                    className="text-primary focus:ring-book-primary"
                   />
                   <span>{range.label}</span>
                 </label>
@@ -372,7 +372,7 @@ export default function FilterSidebar() {
                           format: prev.format === format ? "" : format,
                         }))
                       }
-                      className="rounded text-book-primary focus:ring-book-primary"
+                      className="rounded text-primary focus:ring-book-primary"
                     />
                     <span>{format}</span>
                   </label>
@@ -409,7 +409,7 @@ export default function FilterSidebar() {
                           prev.availability === status ? "" : status,
                       }))
                     }
-                    className="rounded text-book-primary focus:ring-book-primary"
+                    className="rounded text-primary focus:ring-book-primary"
                   />
                   <span>{status}</span>
                 </label>
@@ -445,7 +445,7 @@ export default function FilterSidebar() {
                         rating: prev.rating === rating ? 0 : rating,
                       }))
                     }
-                    className="text-book-primary focus:ring-book-primary"
+                    className="text-primary focus:ring-book-primary"
                   />
                   <span className="flex items-center">
                     {[...Array(5)].map((_, i) => (

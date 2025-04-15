@@ -11,7 +11,7 @@ const categories = [
 export default function FeaturedCategories() {
   return (
     <section className="container mx-auto px-4 py-12">
-      <h2 className="text-3xl font-bold text-center mb-8">Browse Categories</h2>
+      <h2 className="text-3xl font-bold text-primary text-center mb-8">Browse Categories</h2>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
         {categories.map((category) => (
           <Link
