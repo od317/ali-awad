@@ -1,4 +1,3 @@
-// components/commerce/navbar/NavLinks.tsx
 "use client";
 
 import { usePathname } from "next/navigation";

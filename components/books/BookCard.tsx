@@ -1,4 +1,3 @@
-// components/books/BookCard.tsx
 import Image from "next/image";
 import Link from "next/link";
 import { FiStar } from "react-icons/fi";

@@ -1,4 +1,3 @@
-// components/commerce/navbar/NavSearch.tsx
 "use client";
 
 import { FiSearch } from "react-icons/fi";

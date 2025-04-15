@@ -1,4 +1,3 @@
-// components/commerce/navbar/NavLogo.tsx
 import Link from "next/link";
 
 export default function NavLogo() {

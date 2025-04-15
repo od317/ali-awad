@@ -1,4 +1,3 @@
-// components/commerce/navbar/MobileMenu.tsx
 "use client";
 
 import { FiX, FiMenu } from "react-icons/fi";

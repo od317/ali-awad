@@ -1,4 +1,3 @@
-// components/home/SpecialOffers.tsx
 import Image from "next/image";
 import Link from "next/link";
 import { FiClock, FiArrowRight } from "react-icons/fi";

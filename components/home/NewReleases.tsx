@@ -1,4 +1,3 @@
-// components/home/NewReleases.tsx
 import Link from "next/link";
 import BookCard from "../books/BookCard";
 

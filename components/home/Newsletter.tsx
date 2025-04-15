@@ -1,4 +1,3 @@
-// components/home/Newsletter.tsx
 "use client";
 
 import { useState } from "react";

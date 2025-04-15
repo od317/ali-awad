@@ -1,4 +1,3 @@
-// components/home/Bestsellers.tsx
 import BookCard from "@/components/books/BookCard";
 import Link from "next/link";
 

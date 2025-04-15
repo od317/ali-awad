@@ -1,4 +1,3 @@
-// components/commerce/navbar/NavUser.tsx
 "use client";
 
 import { FiUser } from "react-icons/fi";

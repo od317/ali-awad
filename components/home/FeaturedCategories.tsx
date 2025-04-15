@@ -1,4 +1,3 @@
-// components/home/FeaturedCategories.tsx
 import Link from "next/link";
 import { FaBookOpen, FaChild, FaHistory, FaFlask } from "react-icons/fa";
 

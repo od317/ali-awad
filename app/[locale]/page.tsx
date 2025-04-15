@@ -1,5 +1,3 @@
-// app/(main)/page.tsx
-
 import Bestsellers from "@/components/home/Bestsellers";
 import BlogHighlights from "@/components/home/BlogHighlights";
 import FeaturedCategories from "@/components/home/FeaturedCategories";

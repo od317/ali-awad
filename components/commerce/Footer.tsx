@@ -1,4 +1,3 @@
-// components/commerce/Footer.tsx
 import Link from "next/link";
 import {
   FaFacebook,

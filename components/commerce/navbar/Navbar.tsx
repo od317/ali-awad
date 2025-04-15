@@ -1,4 +1,3 @@
-// components/commerce/navbar/Navbar.tsx
 import NavLogo from "./NavLogo";
 import NavLinks from "./NavLinks";
 import NavSearch from "./NavSearch";

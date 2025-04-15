@@ -1,4 +1,3 @@
-// app/(main)/products/[id]/page.tsx
 import RelatedBooks from "@/components/books/RelatedBooks";
 import ReviewList from "@/components/books/ReviewList";
 import AddToCartButton from "@/components/commerce/cart/AddToCartButton";

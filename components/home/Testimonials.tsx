@@ -1,4 +1,3 @@
-// components/home/Testimonials.tsx
 import { FaQuoteLeft } from "react-icons/fa";
 
 export default function Testimonials() {

@@ -1,4 +1,3 @@
-// components/commerce/FilterSidebar.tsx
 "use client";
 
 import { useState } from "react";

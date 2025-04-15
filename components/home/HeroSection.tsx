@@ -1,4 +1,3 @@
-// components/home/HeroSection.tsx
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";

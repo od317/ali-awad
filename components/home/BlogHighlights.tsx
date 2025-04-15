@@ -1,4 +1,3 @@
-// components/home/BlogHighlights.tsx
 import Image from "next/image";
 import Link from "next/link";
 import { FiCalendar, FiClock } from "react-icons/fi";

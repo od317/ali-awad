@@ -1,4 +1,3 @@
-// components/books/BookCarousel.tsx
 "use client";
 
 import { useState } from "react";

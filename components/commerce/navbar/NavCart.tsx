@@ -1,4 +1,3 @@
-// components/commerce/navbar/NavCart.tsx
 "use client";
 
 import { FiShoppingBag } from "react-icons/fi";

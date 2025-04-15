@@ -1,4 +1,3 @@
-// components/ui/Skeleton.tsx
 export function BookCardSkeleton() {
   return (
     <div className="animate-pulse">
