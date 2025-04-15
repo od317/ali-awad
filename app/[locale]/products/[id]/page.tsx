@@ -1,10 +1,15 @@
 // app/(main)/products/[id]/page.tsx
-import { Suspense } from "react";
+import RelatedBooks from "@/components/books/RelatedBooks";
+import ReviewList from "@/components/books/ReviewList";
+import AddToCartButton from "@/components/commerce/cart/AddToCartButton";
 import Image from "next/image";
 import { FiStar, FiShare2, FiHeart } from "react-icons/fi";
-import { BookDetailsSkeleton } from "@/components/ui/Skeletons";
 
-export default function BookDetailPage({ params }: { params: { id: string } }) {
+export default function ProductDetailPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   const book = {
     id: params.id,
     title: "Atomic Habits",
@@ -19,96 +24,118 @@ export default function BookDetailPage({ params }: { params: { id: string } }) {
     isbn: "9780735211292",
     publishedDate: "October 16, 2018",
     publisher: "Avery",
+    coverImage:
+      "https://upload.wikimedia.org/wikipedia/commons/0/06/Atomic_habits.jpg",
   };
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <Suspense fallback={<BookDetailsSkeleton />}>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="aspect-[3/4] relative rounded-lg overflow-hidden shadow-lg">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/0/06/Atomic_habits.jpg"
-              alt={`Cover of ${book.title} by ${book.author}`}
-              fill
-              className="object-cover"
-            />
+      <div className="grid md:grid-cols-2 gap-8">
+        {/* Book Cover */}
+        <div className="aspect-[3/4] relative rounded-lg overflow-hidden shadow-lg bg-book-paper">
+          <Image
+            src={book.coverImage}
+            alt={`Cover of ${book.title} by ${book.author}`}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        {/* Book Details */}
+        <div className="space-y-6">
+          <div>
+            <h1 className="text-3xl font-bold text-primary">{book.title}</h1>
+            <p className="text-xl text-secondary">by {book.author}</p>
           </div>
 
-          <div>
-            <h1 className="text-3xl font-bold mb-2">{book.title}</h1>
-            <p className="text-xl text-gray-600 mb-4">by {book.author}</p>
-
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <FiStar
-                    key={i}
-                    className={`h-5 w-5 ${
-                      i < Math.floor(book.rating)
-                        ? "text-yellow-500 fill-yellow-500"
-                        : "text-gray-300"
-                    }`}
-                  />
-                ))}
-              </div>
-              <span className="text-sm text-gray-600">
-                {book.rating.toFixed(1)} ({book.reviewCount.toLocaleString()}{" "}
-                reviews)
-              </span>
+          {/* Rating */}
+          <div className="flex items-center gap-2">
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <FiStar
+                  key={i}
+                  className={`h-5 w-5 ${
+                    i < Math.floor(book.rating)
+                      ? "text-book-accent fill-book-accent"
+                      : "text-gray-300"
+                  }`}
+                />
+              ))}
             </div>
+            <span className="text-sm text-secondary">
+              {book.rating.toFixed(1)} ({book.reviewCount.toLocaleString()}{" "}
+              reviews)
+            </span>
+          </div>
 
-            <div className="bg-book-paper p-4 rounded-lg mb-6">
-              <p className="text-2xl font-bold text-book-primary mb-2">
-                ${book.price.toFixed(2)}
-              </p>
-              <p className="text-green-600 mb-2">In Stock</p>
-              <p className="text-sm text-gray-600">
-                Free delivery on orders over $50
-              </p>
-            </div>
+          {/* Price Section */}
+          <div className="p-4 rounded-lg bg-book-paper dark:bg-book-dark border border-book-primary/20">
+            <p className="text-2xl font-bold text-book-primary">
+              {book.price.toFixed(2)}
+            </p>
+            <p className="text-book-secondary">In Stock</p>
+            <p className="text-sm text-secondary">
+              Free delivery on orders over $50
+            </p>
+          </div>
 
-            <div className="flex gap-3 mb-8">
-              <button className="flex-1 bg-book-primary hover:bg-book-primary-dark text-white font-bold py-3 rounded-lg transition-colors">
-                Add to Cart
-              </button>
-              <button className="p-3 border rounded-lg hover:bg-gray-50">
-                <FiHeart className="h-5 w-5" />
-              </button>
-              <button className="p-3 border rounded-lg hover:bg-gray-50">
-                <FiShare2 className="h-5 w-5" />
-              </button>
-            </div>
+          {/* Action Buttons */}
+          <div className="flex gap-3">
+            <AddToCartButton
+              productId={book.id}
+              className="flex-1 bg-book-primary hover:bg-book-primary-dark text-book-light"
+            />
+            <button className="p-3 border border-secondary rounded-lg hover:bg-book-paper dark:hover:bg-book-dark">
+              <FiHeart className="h-5 w-5 text-secondary" />
+            </button>
+            <button className="p-3 border border-secondary rounded-lg hover:bg-book-paper dark:hover:bg-book-dark">
+              <FiShare2 className="h-5 w-5 text-secondary" />
+            </button>
+          </div>
 
-            <div className="space-y-4">
-              <h2 className="text-xl font-bold">Description</h2>
-              <p className="text-gray-700">{book.description}</p>
+          {/* Description */}
+          <div className="space-y-4 pt-4">
+            <h2 className="text-xl font-bold text-primary">Description</h2>
+            <p className="text-secondary">{book.description}</p>
+          </div>
 
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <div>
-                  <h3 className="font-medium">Publisher</h3>
-                  <p className="text-gray-600">{book.publisher}</p>
-                </div>
-                <div>
-                  <h3 className="font-medium">Publication Date</h3>
-                  <p className="text-gray-600">{book.publishedDate}</p>
-                </div>
-                <div>
-                  <h3 className="font-medium">Pages</h3>
-                  <p className="text-gray-600">{book.pages}</p>
-                </div>
-                <div>
-                  <h3 className="font-medium">Language</h3>
-                  <p className="text-gray-600">{book.language}</p>
-                </div>
-                <div>
-                  <h3 className="font-medium">ISBN-10</h3>
-                  <p className="text-gray-600">{book.isbn}</p>
-                </div>
-              </div>
-            </div>
+          {/* Details Grid */}
+          <div className="grid grid-cols-2 gap-4 pt-4">
+            <DetailItem label="Publisher" value={book.publisher} />
+            <DetailItem label="Publication Date" value={book.publishedDate} />
+            <DetailItem label="Pages" value={book.pages.toString()} />
+            <DetailItem label="Language" value={book.language} />
+            <DetailItem label="ISBN-10" value={book.isbn} />
           </div>
         </div>
-      </Suspense>
+      </div>
+
+      {/* Reviews Section */}
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-primary mb-6">
+          Customer Reviews
+        </h2>
+        <ReviewList bookId={book.id} />
+      </section>
+
+      {/* Related Books */}
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-primary mb-6">
+          You May Also Like
+        </h2>
+        <RelatedBooks currentBookId={book.id} />
+      </section>
+    </div>
+  );
+}
+
+// Reusable Detail Item Component
+function DetailItem({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <h3 className="font-medium text-primary">{label}</h3>
+      <p className="text-secondary">{value}</p>
     </div>
   );
 }

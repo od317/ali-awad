@@ -15,7 +15,7 @@ export default function SpecialOffers() {
             <div className="flex flex-col md:flex-row">
               <div className="md:w-1/3 relative aspect-square">
                 <Image
-                  src="/images/special-offer.jpg"
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/06/Atomic_habits.jpg"
                   alt="Special offer: 3 Books for the price of 2"
                   fill
                   className="object-cover"

@@ -7,6 +7,7 @@ import "./globals.css";
 import { cookies } from "next/headers";
 import React from "react";
 import Navbar from "@/components/commerce/navbar/Navbar";
+import Footer from "@/components/commerce/Footer";
 
 type LayoutChildProps = {
   user: any; // Replace `any` with a proper User type when ready
@@ -83,6 +84,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           {children}
+          <Footer/>
         </NextIntlClientProvider>
       </body>
     </html>

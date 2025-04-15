@@ -16,6 +16,7 @@
     --book-dark: #1F2937;
     --book-accent: #F59E0B;
     --book-paper: #F3F4F6;
+    --text-primary:black;
   }
 
   .dark {
@@ -26,10 +27,11 @@
     --book-secondary: #34D399; /* light becomes default */
     --book-secondary-light: #6ee7b7; /* even lighter */
     --book-secondary-dark: #10B981; /* original default */
-    --book-light: #1F2937;
-    --book-dark: #F9FAFB;
+    --book-light: #2e2e2f;
+    --book-dark: #252526;
     --book-accent: #FBBF24; /* slightly lighter orange  */
-    --book-paper: #1F2937;
+    --book-paper: #e4e5e6;
+    --text-primary:white;
   }
 
   body {
