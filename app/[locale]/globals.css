@@ -17,6 +17,7 @@
     --book-accent: #F59E0B;
     --book-paper: #F3F4F6;
     --text-primary:black;
+    --text-secondary:black;
   }
 
   .dark {
@@ -32,6 +33,8 @@
     --book-accent: #FBBF24; /* slightly lighter orange  */
     --book-paper: #e4e5e6;
     --text-primary:white;
+    --text-secondary:white;
+
   }
 
   body {
