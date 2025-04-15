@@ -1,4 +1,3 @@
-// app/(auth)/register/page.tsx
 import Link from "next/link";
 import { FiUserPlus } from "react-icons/fi";
 

@@ -1,4 +1,3 @@
-// app/(auth)/login/page.tsx
 import Link from "next/link";
 import { FiLogIn } from "react-icons/fi";
 
