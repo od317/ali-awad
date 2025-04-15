@@ -12,7 +12,7 @@ const bestsellers = [
     rating: 4.8,
     href: "/books/atomic-habits",
   },
-  // Add 3-4 more books
+  // Add 3-4 more books 
 ];
 
 export default function Bestsellers() {
