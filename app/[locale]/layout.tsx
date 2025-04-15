@@ -27,7 +27,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: messages?.SEO?.title || "Ejaza",
+    title: messages?.SEO?.title || "Store",
     description:
       messages?.SEO?.description || "Default description for the site.",
     alternates: {
