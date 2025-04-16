@@ -124,7 +124,7 @@ function AuthorCard({
 }) {
   return (
     <div className="group">
-      <Link href={`/products/authors/${author.id}`} className="block">
+      <Link href={`/authors/${author.id}`} className="block">
         <div className="aspect-square relative bg-gray-100 rounded-lg overflow-hidden mb-3">
           <Image
             src={author.image}

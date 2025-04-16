@@ -6,9 +6,9 @@ import Link from "next/link";
 const links = [
   { name: "Browse", href: "/browse" },
   { name: "Books", href: "/products" },
+  { name: "Authors", href: "/authors" },
   { name: "New Releases", href: "/new-releases" },
   { name: "Bestsellers", href: "/bestsellers" },
-  { name: "Authors", href: "/authors" },
   { name: "Deals", href: "/deals" },
 ];
 
@@ -21,7 +21,7 @@ export default function NavLinks() {
         <Link
           key={link.name}
           href={link.href}
-        className={`text-sm font-medium transition-colors text-primary ${
+          className={`text-sm font-medium transition-colors text-primary ${
             pathname === link.href ? "text-primary" : "text-dark"
           }`}
         >
