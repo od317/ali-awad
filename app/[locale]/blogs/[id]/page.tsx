@@ -5,6 +5,7 @@ import { FiCalendar, FiClock, FiTag, FiShare2 } from "react-icons/fi";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import AuthorBio from "@/components/blog/AuthorBio";
 
+
 // Types
 interface BlogPost {
   id: string;
