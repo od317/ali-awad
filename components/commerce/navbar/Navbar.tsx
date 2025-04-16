@@ -5,6 +5,7 @@ import NavUser from "./NavUser";
 import NavCart from "./NavCart";
 import MobileMenu from "./MobileMenu";
 import ThemeSwitcher from "@/components/theme/ThemeSwitcher";
+import NavWishlist from "./NavWishlist";
 
 export default function Navbar() {
   return (
@@ -20,8 +21,9 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <NavSearch />
             <NavUser />
+            <NavWishlist />
             <NavCart />
-            <ThemeSwitcher/>
+            <ThemeSwitcher />
           </div>
         </div>
       </div>

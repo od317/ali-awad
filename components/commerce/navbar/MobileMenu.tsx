@@ -22,14 +22,14 @@ export default function MobileMenu() {
   const pathname = usePathname();
 
   return (
-    <div className="md:hidden">
+    <div className="md:hidden text-primary">
       <button
         type="button"
         className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-book-dark"
         onClick={() => setMobileMenuOpen(true)}
       >
         <span className="sr-only">Open main menu</span>
-        <FiMenu className="h-6 w-6" aria-hidden="true" />
+        <FiMenu className="h-6 w-6 text-primary" aria-hidden="true" />
       </button>
 
       {mobileMenuOpen && (
@@ -42,7 +42,7 @@ export default function MobileMenu() {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
-              <FiX className="h-6 w-6" aria-hidden="true" />
+              <FiX className="h-6 w-6 text-primary" aria-hidden="true" />
             </button>
           </div>
           <div className="mt-6 flow-root px-4">
@@ -52,7 +52,7 @@ export default function MobileMenu() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 ${
+                    className={`-mx-3 block rounded-lg px-3 py-2 text-primary font-medium leading-7 ${
                       pathname === item.href
                         ? "bg-book-paper text-book-primary"
                         : "text-book-dark hover:bg-book-paper"
