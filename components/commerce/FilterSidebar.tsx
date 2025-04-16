@@ -3,21 +3,19 @@
 import { useState } from "react";
 import { FiChevronDown, FiChevronUp, FiX } from "react-icons/fi";
 
-export default function FilterSidebar() {
+export default function AuthorFilterSidebar() {
   const [filters, setFilters] = useState({
-    genres: [] as string[],
-    priceRange: "",
-    format: "",
-    availability: "",
+    nationalities: [] as string[],
+    booksCount: "",
     rating: 0,
+    awards: [] as string[],
   });
 
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [expandedSections, setExpandedSections] = useState({
-    genres: true,
-    price: true,
-    format: true,
-    availability: true,
+    nationalities: true,
+    booksCount: true,
+    awards: true,
     rating: true,
   });
 
@@ -28,44 +26,63 @@ export default function FilterSidebar() {
     }));
   };
 
-  const bookGenres = [
-    "Fiction",
-    "Non-Fiction",
-    "Mystery",
-    "Science Fiction",
-    "Fantasy",
-    "Romance",
-    "Biography",
-    "History",
-    "Self-Help",
-    "Science",
-    "Business",
-    "Children",
-    "Young Adult",
+  const authorNationalities = [
+    "American",
+    "British",
+    "Canadian",
+    "French",
+    "German",
+    "Japanese",
+    "Indian",
+    "Nigerian",
+    "Australian",
+    "Brazilian",
+    "Mexican",
+    "Russian",
   ];
 
-  const handleGenreChange = (genre: string) => {
+  const authorAwards = [
+    "Nobel Prize",
+    "Pulitzer Prize",
+    "Booker Prize",
+    "National Book Award",
+    "Hugo Award",
+    "Nebula Award",
+    "Edgar Award",
+    "Caldecott Medal",
+    "Newbery Medal",
+  ];
+
+  const handleNationalityChange = (nationality: string) => {
     setFilters((prev) => ({
       ...prev,
-      genres: prev.genres.includes(genre)
-        ? prev.genres.filter((g) => g !== genre)
-        : [...prev.genres, genre],
+      nationalities: prev.nationalities.includes(nationality)
+        ? prev.nationalities.filter((n) => n !== nationality)
+        : [...prev.nationalities, nationality],
     }));
   };
 
-  const handlePriceChange = (range: string) => {
+  const handleBooksCountChange = (range: string) => {
     setFilters((prev) => ({
       ...prev,
-      priceRange: prev.priceRange === range ? "" : range,
+      booksCount: prev.booksCount === range ? "" : range,
+    }));
+  };
+
+  const handleAwardChange = (award: string) => {
+    setFilters((prev) => ({
+      ...prev,
+      awards: prev.awards.includes(award)
+        ? prev.awards.filter((a) => a !== award)
+        : [...prev.awards, award],
     }));
   };
 
   const clearAllFilters = () => {
     setFilters({
-      genres: [],
-      priceRange: "",
-      format: "",
-      availability: "",
+      nationalities: [],
+      booksCount: "",
+      awards: [],
       rating: 0,
     });
   };
@@ -75,7 +92,7 @@ export default function FilterSidebar() {
       {/* Mobile filter button */}
       <button
         type="button"
-        className="md:hidden flex items-center gap-2 mb-4 text-]primary"
+        className="md:hidden flex items-center gap-2 mb-4 text-primary"
         onClick={() => setMobileFiltersOpen(true)}
       >
         <span>Filters</span>
@@ -87,63 +104,66 @@ export default function FilterSidebar() {
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50 md:hidden">
           <div className="absolute inset-0 bg-white p-4 overflow-y-auto">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-bold">Filters</h2>
+              <h2 className="text-xl font-bold">Author Filters</h2>
               <button onClick={() => setMobileFiltersOpen(false)}>
                 <FiX className="h-6 w-6" />
               </button>
             </div>
 
             <div className="space-y-6">
-              {/* Genre filter */}
+              {/* Nationality filter */}
               <div className="border-b pb-4">
                 <button
                   className="flex justify-between items-center w-full"
-                  onClick={() => toggleSection("genres")}
+                  onClick={() => toggleSection("nationalities")}
                 >
-                  <h3 className="font-medium">Genres</h3>
-                  {expandedSections.genres ? (
+                  <h3 className="font-medium">Nationality</h3>
+                  {expandedSections.nationalities ? (
                     <FiChevronUp className="h-5 w-5" />
                   ) : (
                     <FiChevronDown className="h-5 w-5" />
                   )}
                 </button>
-                {expandedSections.genres && (
+                {expandedSections.nationalities && (
                   <div className="mt-2 space-y-2">
-                    {bookGenres.map((genre) => (
-                      <label key={genre} className="flex items-center gap-2">
+                    {authorNationalities.map((nationality) => (
+                      <label
+                        key={nationality}
+                        className="flex items-center gap-2"
+                      >
                         <input
                           type="checkbox"
-                          checked={filters.genres.includes(genre)}
-                          onChange={() => handleGenreChange(genre)}
+                          checked={filters.nationalities.includes(nationality)}
+                          onChange={() => handleNationalityChange(nationality)}
                           className="rounded text-primary focus:ring-book-primary"
                         />
-                        <span>{genre}</span>
+                        <span>{nationality}</span>
                       </label>
                     ))}
                   </div>
                 )}
               </div>
 
-              {/* Price filter */}
+              {/* Books count filter */}
               <div className="border-b pb-4">
                 <button
                   className="flex justify-between items-center w-full"
-                  onClick={() => toggleSection("price")}
+                  onClick={() => toggleSection("booksCount")}
                 >
-                  <h3 className="font-medium">Price</h3>
-                  {expandedSections.price ? (
+                  <h3 className="font-medium">Books Published</h3>
+                  {expandedSections.booksCount ? (
                     <FiChevronUp className="h-5 w-5" />
                   ) : (
                     <FiChevronDown className="h-5 w-5" />
                   )}
                 </button>
-                {expandedSections.price && (
+                {expandedSections.booksCount && (
                   <div className="mt-2 space-y-2">
                     {[
-                      { label: "Under $10", value: "0-10" },
-                      { label: "$10 - $25", value: "10-25" },
-                      { label: "$25 - $50", value: "25-50" },
-                      { label: "Over $50", value: "50-1000" },
+                      { label: "1-5 books", value: "1-5" },
+                      { label: "5-10 books", value: "5-10" },
+                      { label: "10-20 books", value: "10-20" },
+                      { label: "20+ books", value: "20-1000" },
                     ].map((range) => (
                       <label
                         key={range.value}
@@ -151,9 +171,9 @@ export default function FilterSidebar() {
                       >
                         <input
                           type="radio"
-                          name="price"
-                          checked={filters.priceRange === range.value}
-                          onChange={() => handlePriceChange(range.value)}
+                          name="booksCount"
+                          checked={filters.booksCount === range.value}
+                          onChange={() => handleBooksCountChange(range.value)}
                           className="text-primary focus:ring-book-primary"
                         />
                         <span>{range.label}</span>
@@ -163,39 +183,32 @@ export default function FilterSidebar() {
                 )}
               </div>
 
-              {/* Format filter */}
+              {/* Awards filter */}
               <div className="border-b pb-4">
                 <button
                   className="flex justify-between items-center w-full"
-                  onClick={() => toggleSection("format")}
+                  onClick={() => toggleSection("awards")}
                 >
-                  <h3 className="font-medium">Format</h3>
-                  {expandedSections.format ? (
+                  <h3 className="font-medium">Awards</h3>
+                  {expandedSections.awards ? (
                     <FiChevronUp className="h-5 w-5" />
                   ) : (
                     <FiChevronDown className="h-5 w-5" />
                   )}
                 </button>
-                {expandedSections.format && (
+                {expandedSections.awards && (
                   <div className="mt-2 space-y-2">
-                    {["Hardcover", "Paperback", "eBook", "Audiobook"].map(
-                      (format) => (
-                        <label key={format} className="flex items-center gap-2">
-                          <input
-                            type="checkbox"
-                            checked={filters.format === format}
-                            onChange={() =>
-                              setFilters((prev) => ({
-                                ...prev,
-                                format: prev.format === format ? "" : format,
-                              }))
-                            }
-                            className="rounded text-primary focus:ring-book-primary"
-                          />
-                          <span>{format}</span>
-                        </label>
-                      )
-                    )}
+                    {authorAwards.map((award) => (
+                      <label key={award} className="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          checked={filters.awards.includes(award)}
+                          onChange={() => handleAwardChange(award)}
+                          className="rounded text-primary focus:ring-book-primary"
+                        />
+                        <span>{award}</span>
+                      </label>
+                    ))}
                   </div>
                 )}
               </div>
@@ -270,7 +283,7 @@ export default function FilterSidebar() {
       {/* Desktop filters */}
       <div className="hidden md:block space-y-6">
         <div className="flex justify-between items-center">
-          <h2 className="font-bold text-lg">Filters</h2>
+          <h2 className="font-bold text-lg">Author Filters</h2>
           <button
             onClick={clearAllFilters}
             className="text-sm text-primary hover:underline"
@@ -279,63 +292,63 @@ export default function FilterSidebar() {
           </button>
         </div>
 
-        {/* Genre filter */}
+        {/* Nationality filter */}
         <div className="border-b pb-4">
           <button
             className="flex justify-between items-center w-full"
-            onClick={() => toggleSection("genres")}
+            onClick={() => toggleSection("nationalities")}
           >
-            <h3 className="font-medium">Genres</h3>
-            {expandedSections.genres ? (
+            <h3 className="font-medium">Nationality</h3>
+            {expandedSections.nationalities ? (
               <FiChevronUp className="h-5 w-5" />
             ) : (
               <FiChevronDown className="h-5 w-5" />
             )}
           </button>
-          {expandedSections.genres && (
+          {expandedSections.nationalities && (
             <div className="mt-2 space-y-2">
-              {bookGenres.map((genre) => (
-                <label key={genre} className="flex items-center gap-2">
+              {authorNationalities.map((nationality) => (
+                <label key={nationality} className="flex items-center gap-2">
                   <input
                     type="checkbox"
-                    checked={filters.genres.includes(genre)}
-                    onChange={() => handleGenreChange(genre)}
+                    checked={filters.nationalities.includes(nationality)}
+                    onChange={() => handleNationalityChange(nationality)}
                     className="rounded text-primary focus:ring-book-primary"
                   />
-                  <span>{genre}</span>
+                  <span>{nationality}</span>
                 </label>
               ))}
             </div>
           )}
         </div>
 
-        {/* Price filter */}
+        {/* Books count filter */}
         <div className="border-b pb-4">
           <button
             className="flex justify-between items-center w-full"
-            onClick={() => toggleSection("price")}
+            onClick={() => toggleSection("booksCount")}
           >
-            <h3 className="font-medium">Price</h3>
-            {expandedSections.price ? (
+            <h3 className="font-medium">Books Published</h3>
+            {expandedSections.booksCount ? (
               <FiChevronUp className="h-5 w-5" />
             ) : (
               <FiChevronDown className="h-5 w-5" />
             )}
           </button>
-          {expandedSections.price && (
+          {expandedSections.booksCount && (
             <div className="mt-2 space-y-2">
               {[
-                { label: "Under $10", value: "0-10" },
-                { label: "$10 - $25", value: "10-25" },
-                { label: "$25 - $50", value: "25-50" },
-                { label: "Over $50", value: "50-1000" },
+                { label: "1-5 books", value: "1-5" },
+                { label: "5-10 books", value: "5-10" },
+                { label: "10-20 books", value: "10-20" },
+                { label: "20+ books", value: "20-1000" },
               ].map((range) => (
                 <label key={range.value} className="flex items-center gap-2">
                   <input
                     type="radio"
-                    name="price"
-                    checked={filters.priceRange === range.value}
-                    onChange={() => handlePriceChange(range.value)}
+                    name="booksCount"
+                    checked={filters.booksCount === range.value}
+                    onChange={() => handleBooksCountChange(range.value)}
                     className="text-primary focus:ring-book-primary"
                   />
                   <span>{range.label}</span>
@@ -345,73 +358,30 @@ export default function FilterSidebar() {
           )}
         </div>
 
-        {/* Format filter */}
+        {/* Awards filter */}
         <div className="border-b pb-4">
           <button
             className="flex justify-between items-center w-full"
-            onClick={() => toggleSection("format")}
+            onClick={() => toggleSection("awards")}
           >
-            <h3 className="font-medium">Format</h3>
-            {expandedSections.format ? (
+            <h3 className="font-medium">Awards</h3>
+            {expandedSections.awards ? (
               <FiChevronUp className="h-5 w-5" />
             ) : (
               <FiChevronDown className="h-5 w-5" />
             )}
           </button>
-          {expandedSections.format && (
+          {expandedSections.awards && (
             <div className="mt-2 space-y-2">
-              {["Hardcover", "Paperback", "eBook", "Audiobook"].map(
-                (format) => (
-                  <label key={format} className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      checked={filters.format === format}
-                      onChange={() =>
-                        setFilters((prev) => ({
-                          ...prev,
-                          format: prev.format === format ? "" : format,
-                        }))
-                      }
-                      className="rounded text-primary focus:ring-book-primary"
-                    />
-                    <span>{format}</span>
-                  </label>
-                )
-              )}
-            </div>
-          )}
-        </div>
-
-        {/* Availability filter */}
-        <div className="border-b pb-4">
-          <button
-            className="flex justify-between items-center w-full"
-            onClick={() => toggleSection("availability")}
-          >
-            <h3 className="font-medium">Availability</h3>
-            {expandedSections.availability ? (
-              <FiChevronUp className="h-5 w-5" />
-            ) : (
-              <FiChevronDown className="h-5 w-5" />
-            )}
-          </button>
-          {expandedSections.availability && (
-            <div className="mt-2 space-y-2">
-              {["In Stock", "Pre-Order", "Out of Stock"].map((status) => (
-                <label key={status} className="flex items-center gap-2">
+              {authorAwards.map((award) => (
+                <label key={award} className="flex items-center gap-2">
                   <input
                     type="checkbox"
-                    checked={filters.availability === status}
-                    onChange={() =>
-                      setFilters((prev) => ({
-                        ...prev,
-                        availability:
-                          prev.availability === status ? "" : status,
-                      }))
-                    }
+                    checked={filters.awards.includes(award)}
+                    onChange={() => handleAwardChange(award)}
                     className="rounded text-primary focus:ring-book-primary"
                   />
-                  <span>{status}</span>
+                  <span>{award}</span>
                 </label>
               ))}
             </div>

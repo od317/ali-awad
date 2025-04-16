@@ -31,3 +31,20 @@ export function BookDetailsSkeleton() {
     </div>
   );
 }
+
+
+export function AuthorCardSkeleton() {
+  return (
+    <div className="animate-pulse">
+      <div className="aspect-square bg-gray-200 rounded-lg mb-3"></div>
+      <div className="h-5 bg-gray-200 rounded mb-2 w-3/4"></div>
+      <div className="flex justify-between">
+        <div className="flex items-center">
+          <div className="h-4 w-4 bg-gray-200 rounded-full mr-1"></div>
+          <div className="h-4 bg-gray-200 rounded w-8"></div>
+        </div>
+        <div className="h-4 bg-gray-200 rounded w-12"></div>
+      </div>
+    </div>
+  );
+}
