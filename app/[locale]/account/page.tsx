@@ -72,6 +72,12 @@ export default async function AccountPage() {
               </div>
             </div>
 
+            <div className="space-y-8">
+              {/* Existing content... */}
+              <EditProfileModal />
+              <PasswordChangeForm />
+            </div>
+
             {/* Quick Actions */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <QuickAction title="My Orders" icon="📦" href="/account/orders" />
@@ -92,11 +98,6 @@ export default async function AccountPage() {
                 href="/api/auth/signout"
                 isAction={true}
               />
-            </div>
-
-            <div className="space-y-8">
-              <EditProfileModal />
-              <PasswordChangeForm />
             </div>
 
             {/* Recent Activity */}

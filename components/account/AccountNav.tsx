@@ -10,6 +10,7 @@ export default function AccountNav() {
     { name: "Account Overview", href: "/account" },
     { name: "Orders", href: "/account/orders" },
     { name: "Wishlist", href: "/account/wishlist" },
+    { name: "Addresses", href: "/account/addresses" },
     { name: "Payment Methods", href: "/account/payments" },
     { name: "Settings", href: "/account/settings" },
   ];
