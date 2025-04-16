@@ -53,7 +53,7 @@ export default function ThemeSwitcher() {
       {theme === "light" ? (
         <FiMoon className="h-5 w-5" />
       ) : (
-        <FiSun className="h-5 w-5" />
+        <FiSun className="h-5 w-5 text-primary" />
       )}
     </button>
   );
