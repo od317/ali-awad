@@ -18,10 +18,10 @@ export default function NavCart() {
         aria-label="Open cart"
       >
         <FiShoppingBag
-          className="flex-shrink-0 h-6 w-6 text-book-dark group-hover:text-book-primary"
+          className="flex-shrink-0 h-6 w-6 text-primary"
           aria-hidden="true"
         />
-        <span className="ml-2 text-sm font-medium text-book-dark group-hover:text-book-primary">
+        <span className="ml-2 text-sm font-medium text-primary">
           {itemCount}
         </span>
       </button>
