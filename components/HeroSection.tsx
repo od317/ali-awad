@@ -23,14 +23,11 @@ const HeroSection = () => {
             work environment that integrates architectural creativity with
             executive efficiency.
           </p>
-          <button className="bg-arch-secondary hover:bg-arch-secondary-dark text-arch-dark font-bold py-3 px-6 rounded transition-colors duration-300">
-            View My Work
-          </button>
         </div>
         <div className="md:w-1/2 flex justify-center">
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-arch-secondary">
             <Image
-              src="/architect-profile.jpg" // Replace with your image path
+              src="/person.JPG" // Replace with your image path
               alt="Architect Profile"
               fill
               className="object-cover"
