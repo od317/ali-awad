@@ -1,3 +1,4 @@
+// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 export default {
@@ -9,30 +10,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Your existing custom colors
-        "book-primary": {
-          DEFAULT: "var(--book-primary)",
-          light: "var(--book-primary-light)",
-          dark: "var(--book-primary-dark)",
+        // Architecture-themed colors
+        "arch-primary": {
+          DEFAULT: "#2A3A4A", // Dark blue-gray
+          light: "#3D4E5D",
+          dark: "#1A2A3A",
         },
-        "book-secondary": {
-          DEFAULT: "var(--book-secondary)",
-          light: "var(--book-secondary-light)",
-          dark: "var(--book-secondary-dark)",
+        "arch-secondary": {
+          DEFAULT: "#D4A76A", // Warm beige
+          light: "#E5C28F",
+          dark: "#C39550",
         },
-        "book-light": "var(--book-light)",
-        "book-dark": "var(--book-dark)",
-        "book-accent": "var(--book-accent)",
-        "book-paper": "var(--book-paper)",
-
-        // New CSS variables for text colors
-        primary: "var(--text-primary)",
-        secondary: "var(--text-secondary)",
-        accent: "var(--text-accent)",
+        "arch-accent": "#7D8B99", // Cool gray
+        "arch-light": "#F5F5F5", // Off-white
+        "arch-dark": "#1E1E1E", // Near black
+        "arch-paper": "#F8F4E8", // Paper-like background
       },
       backgroundColor: {
-        primary: "var(--bg-primary)",
-        secondary: "var(--bg-secondary)",
+        primary: "var(--bg-primary, #F8F4E8)",
+        secondary: "var(--bg-secondary, #FFFFFF)",
+      },
+      textColor: {
+        primary: "var(--text-primary, #1E1E1E)",
+        secondary: "var(--text-secondary, #2A3A4A)",
+        accent: "var(--text-accent, #7D8B99)",
       },
     },
   },

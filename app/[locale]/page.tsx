@@ -1,23 +1,20 @@
-import Bestsellers from "@/components/home/Bestsellers";
-import BlogHighlights from "@/components/home/BlogHighlights";
-import FeaturedCategories from "@/components/home/FeaturedCategories";
-import HeroSection from "@/components/home/HeroSection";
-import NewReleases from "@/components/home/NewReleases";
-import Newsletter from "@/components/home/Newsletter";
-import SpecialOffers from "@/components/home/SpecialOffers";
-import Testimonials from "@/components/home/Testimonials";
+'use client'
+// app/page.tsx
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import ContactSection from "@/components/ContactSection";
+import Layout from "@/components/Layout";
 
 export default function Home() {
   return (
-    <div className="space-y-12 pb-12">
+    <Layout>
       <HeroSection />
-      <FeaturedCategories />
-      <NewReleases />
-      <Bestsellers />
-      <SpecialOffers />
-      <Testimonials />
-      <BlogHighlights />
-      <Newsletter />
-    </div>
+      <AboutSection />
+      <ExperienceSection />
+      <ProjectsSection />
+      <ContactSection />
+    </Layout>
   );
 }
