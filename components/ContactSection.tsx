@@ -26,7 +26,7 @@ const ContactSection = () => {
                       href="mailto:architect@example.com"
                       className="hover:text-arch-secondary transition-colors"
                     >
-                      architect@example.com
+                      aliawad2592001@gmail.com
                     </a>
                   </div>
                 </div>
@@ -52,7 +52,7 @@ const ContactSection = () => {
                   />
                   <div>
                     <p className="font-medium">Location</p>
-                    <p>123 Design Street, Creative City, CC 12345</p>
+                    <p>Damascus</p>
                   </div>
                 </div>
               </div>
