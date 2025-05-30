@@ -8,7 +8,7 @@ type Project = {
   title: string;
   type: string;
   year: string;
-  description: string;
+  description: any;
   coverImage: string;
   images: string[];
 };
@@ -20,13 +20,14 @@ const ProjectsSection = () => {
   const projects: Project[] = [
     {
       id: 4,
-      title: "Lakeside Retreat",
+      title: "120-bed children's hospital - Qamishli city",
       type: "Residential",
-      year: "2019",
+      year: "",
       description:
-        "A minimalist retreat designed to maximize connection with the lakeside environment while maintaining privacy and comfort.",
+        "The project aims to provide children with the ability to continue their daily lives, including play areas, study areas, and social and recreational spaces, while enhancing their medical recovery. In short, it aims to create an environment that enhances the child's well-being in the hospital and stimulates the healing process, while paying attention to safety factors. Thus, we give sick children the opportunity to continue their routine life without sudden interruption.",
       coverImage: "/projects/p4/p1.jpg",
       images: [
+        "/projects/p4/p1.jpg",
         "/projects/p4/p2.jpg",
         "/projects/p4/p3.jpg",
         "/projects/p4/p4.jpg",
@@ -46,6 +47,14 @@ const ProjectsSection = () => {
         "/projects/p4/p18.jpg",
         "/projects/p4/p19.jpg",
         "/projects/p4/p20.jpg",
+        "/projects/p4/p21.jpg",
+        "/projects/p4/p22.jpg",
+        "/projects/p4/p23.jpg",
+        "/projects/p4/p24.jpg",
+        "/projects/p4/p25.jpg",
+        "/projects/p4/p26.jpg",
+        "/projects/p4/p27.jpg",
+        "/projects/p4/p28.jpg",
       ],
     },
     {
@@ -83,7 +92,7 @@ The tower was formed from four square floor plans, each rotated 45 degrees from 
 Structural system of the tower: load-bearing core.
 Structural system of the podium: ribbed slabs and columns.
 Structural system of the basements: hollow-core slabs (hourdi), retaining walls, and columns.`,
-      coverImage: "/projects/p2/p1.png",
+      coverImage: "/projects/p2/p9.png",
       images: [
         "/projects/p2/p1.png",
         "/projects/p2/p2.png",
@@ -115,6 +124,114 @@ Structural system of the basements: hollow-core slabs (hourdi), retaining walls,
         "/projects/p3/p4.png",
         "/projects/p3/p5.png",
         "/projects/p3/p6.png",
+      ],
+    },
+    {
+      id: 5,
+      title:
+        "Revitalizing Al-Thawra Street into a vital (environmentally, culturally, and socially) central artery in Damascus",
+      type: "Cultural",
+      year: "",
+      description: (
+        <>
+          1. Environmental Aspect: Increasing green spaces by establishing
+          gardens in vacant areas (optimal utilization of unused spaces)
+          <br /> 2. Social Aspect: Connecting parks via pedestrian bridges over
+          vehicular roads, while incorporating seating areas for social
+          interaction and rest <br /> 3. Adding a cultural center to revitalize
+          the street culturally
+          <br /> 4. Adding an open-air amphitheater opposite the Justice Palace
+          and connecting it to the nodal island in front (to enhance pedestrian
+          accessibility) <br /> 5. Revitalizing a branch of the Barada River
+          near the citadel and establishing an adjacent green berm to serve
+          visitors
+          <br /> 6.Increasing tree planting to reduce pollution and mitigate
+          climate change effects, particularly in Al-Qaramani Park (through
+          removing violations/commercial stalls and replacing them with green
+          spaces) <br /> 7. Street section redesign featuring dedicated lanes
+          for bicycles, public transport, and private vehicles, along with
+          sidewalk optimization and urban furniture upgrades
+        </>
+      ),
+      coverImage: "/projects/p5/p20.jpg",
+      images: [
+        "/projects/p5/p1.jpg",
+        "/projects/p5/p2.jpg",
+        "/projects/p5/p3.jpg",
+        "/projects/p5/p4.jpg",
+        "/projects/p5/p5.jpg",
+        "/projects/p5/p6.jpg",
+        "/projects/p5/p7.jpg",
+        "/projects/p5/p8.jpg",
+        "/projects/p5/p9.jpg",
+        "/projects/p5/p10.jpg",
+        "/projects/p5/p11.jpg",
+        "/projects/p5/p12.jpg",
+        "/projects/p5/p13.jpg",
+        "/projects/p5/p14.jpg",
+        "/projects/p5/p15.jpg",
+        "/projects/p5/p16.jpg",
+        "/projects/p5/p17.jpg",
+        "/projects/p5/p18.jpg",
+        "/projects/p5/p19.jpg",
+        "/projects/p5/p20.jpg",
+        "/projects/p5/p21.jpg",
+        "/projects/p5/p22.jpg",
+        "/projects/p5/p23.jpg",
+        "/projects/p5/p24.jpg",
+        "/projects/p5/p25.jpg",
+        "/projects/p5/p26.jpg",
+        "/projects/p5/p27.jpg",
+        "/projects/p5/p28.jpg",
+        "/projects/p5/p29.jpg",
+      ],
+    },
+    {
+      id: 6,
+      title:
+        "Rehabilitation and development of a residential segment in the city of Darayya - a sustainable urban investment vision",
+      type: "Cultural",
+      year: "",
+      description:
+        "The project aims to rehabilitate a damaged urban area in the city of Darayya and transform it into a modern residential and investment area based on the principles of sustainable planning and quality of life. The project focuses on achieving a balance between housing needs and economic opportunities within an integrated urban environment.",
+      coverImage: "/projects/p6/p15.jpg",
+      images: [
+        "/projects/p6/p1.png",
+        "/projects/p6/p2.png",
+        "/projects/p6/p3.png",
+        "/projects/p6/p4.png",
+        "/projects/p6/p5.png",
+        "/projects/p6/p6.png",
+        "/projects/p6/p7.png",
+        "/projects/p6/p8.png",
+        "/projects/p6/p9.png",
+        "/projects/p6/p10.png",
+        "/projects/p6/p11.png",
+        "/projects/p6/p12.png",
+        "/projects/p6/p13.jpg",
+        "/projects/p6/p14.jpg",
+        "/projects/p6/p15.jpg",
+        "/projects/p6/p16.jpg",
+        "/projects/p6/p17.jpg",
+        "/projects/p6/p18.jpg",
+        "/projects/p6/p19.jpg",
+        "/projects/p6/p20.jpg",
+      ],
+    },
+    {
+      id: 7,
+      title: "Ministry of Tourism + Tourism Institute",
+      type: "Cultural",
+      year: "",
+      description:
+        "The project aims to establish a complex housing the Ministry of Tourism and a specialized institute for tourism education and training. This will serve as a national center for human resources development and support for the development of the tourism sector. The project seeks to raise the efficiency of tourism workers and enhance the quality of tourism services in line with international standards.",
+      coverImage: "/projects/p8/p2.jpg",
+      images: [
+        "/projects/p8/p1.jpg",
+        "/projects/p8/p2.jpg",
+        "/projects/p8/p3.jpg",
+        "/projects/p8/p4.jpg",
+        "/projects/p8/p5.jpg",
       ],
     },
   ];

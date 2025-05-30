@@ -57,48 +57,6 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block mb-1">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full bg-arch-primary-light border border-arch-accent rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-arch-secondary"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block mb-1">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full bg-arch-primary-light border border-arch-accent rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-arch-secondary"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block mb-1">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    className="w-full bg-arch-primary-light border border-arch-accent rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-arch-secondary"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="bg-arch-secondary hover:bg-arch-secondary-dark text-arch-dark font-bold py-3 px-6 rounded transition-colors duration-300"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </div>
