@@ -51,20 +51,28 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 {project.year}
               </span>
             </div>
-            <p className="text-arch-dark">{project.description}</p>
+            <div className="text-arch-dark">
+              {typeof project.description === "string" ? (
+                <p>{project.description}</p>
+              ) : (
+                project.description
+              )}
+            </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 gap-4">
             {project.images.map((image, index) => (
               <div
                 key={index}
-                className="relative h-96 w-full rounded-lg overflow-hidden"
+                className="relative aspect-video w-full rounded-lg overflow-hidden bg-gray-100"
               >
                 <Image
                   src={image}
                   alt={`${project.title} - Image ${index + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+                  priority={index < 3} // Only prioritize first few images
                 />
               </div>
             ))}
