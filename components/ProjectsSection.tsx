@@ -1,5 +1,5 @@
 // components/ProjectsSection.tsx
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import Image from "next/image";
 import ProjectModal from "./ProjectModal";
 
@@ -8,7 +8,7 @@ type Project = {
   title: string;
   type: string;
   year: string;
-  description: any;
+  description: string | ReactNode;
   coverImage: string;
   images: string[];
 };

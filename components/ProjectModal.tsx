@@ -1,5 +1,5 @@
 // components/ProjectModal.tsx
-import React from "react";
+import React, { ReactNode } from "react";
 import Image from "next/image";
 
 type ProjectModalProps = {
@@ -7,7 +7,7 @@ type ProjectModalProps = {
     title: string;
     type: string;
     year: string;
-    description: string;
+    description: string | ReactNode;
     images: string[];
   };
   onClose: () => void;
